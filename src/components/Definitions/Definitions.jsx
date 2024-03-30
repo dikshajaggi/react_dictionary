@@ -2,18 +2,21 @@ import React from "react";
 import "./Definitions.css";
 
 const Definitions = ({ meanings, word, LightTheme, category }) => {
+  // Function to handle audio pronunciation
+  const speakWord = (text) => {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(text);
+    synth.speak(utterance);
+  };
+
   return (
     <div className="meanings">
-      {meanings[0] && word && category === "en" && (
-        <audio
-          style={{ backgroundColor: "#fff", borderRadius: 10 }}
-          src={meanings[0].phonetics[0] && meanings[0].phonetics[0].audio}
-          controls
-        >
-          Your browser does not support the audio element.
-        </audio>
+      {/* Audio pronunciation button */}
+      {word && category === "en" && (
+        <button className="pronounce" onClick={() => speakWord(word)}>Pronounce</button>
       )}
 
+      {/* Display meanings */}
       {word === "" ? (
         <span className="subTitle">Start by typing a word in search</span>
       ) : (

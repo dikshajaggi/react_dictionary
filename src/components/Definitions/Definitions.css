@@ -1,5 +1,4 @@
-  
-.meanings {
+  .meanings {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
@@ -10,12 +9,20 @@
     padding: 10px 20px;
     overflow-x: hidden;
   }
-  
+
+  .pronounce {
+    background-color: grey;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
   .subTitle {
     font-size: 5vw;
     font-family: "Montserrat", sans-serif;
   }
-  
+
   @media (max-width: 900px) {
     .meanings {
       overflow: scroll;
@@ -23,6 +30,7 @@
       height: 60vh;
     }
   }
+
   .singleMean {
     display: flex;
     flex-direction: column;
